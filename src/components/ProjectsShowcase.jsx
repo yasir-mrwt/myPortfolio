@@ -48,6 +48,8 @@ const ProjectsShowcase = () => {
         { label: "Deployment", value: "Vercel + Railway" },
         { label: "Stack", value: "MERN" },
       ],
+      github: "https://github.com/yasir-mrwt/unibro-production",
+      live: "https://unibro-production.vercel.app",
     },
     {
       title: "Job Tracker Pro",
@@ -78,6 +80,8 @@ const ProjectsShowcase = () => {
         { label: "Backend", value: "Python FastAPI" },
         { label: "Database", value: "MongoDB" },
       ],
+      github: "https://github.com/yasir-mrwt/job-tracker",
+      live: "https://github.com/yasir-mrwt/job-tracker",
     },
     {
       title: "E-Commerce Hub",
@@ -105,6 +109,8 @@ const ProjectsShowcase = () => {
         { label: "Stack", value: "Node.js + MongoDB" },
         { label: "Features", value: "Full E-Commerce" },
       ],
+      github: "https://github.com/yasir-mrwt/E-commerce",
+      live: "https://github.com/yasir-mrwt/E-commerce",
     },
     {
       title: "PetCare System",
@@ -135,6 +141,8 @@ const ProjectsShowcase = () => {
         { label: "Database", value: "MySQL" },
         { label: "Architecture", value: "MVC Pattern" },
       ],
+      github: "https://github.com/yasir-mrwt/petCare",
+      live: "https://github.com/yasir-mrwt/petCare",
     },
   ];
 
@@ -142,12 +150,9 @@ const ProjectsShowcase = () => {
 
   const handleSelectProject = (idx) => {
     setActiveProject(idx);
-    // Scroll to the top of the projects section so newly selected project is visible
     const el = document.getElementById("projects");
     if (el) {
-      // Use smooth scrolling and align to start of the section
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      // If there's a fixed navbar, you may want to offset further; adjust if needed
     }
   };
 
@@ -267,20 +272,28 @@ const ProjectsShowcase = () => {
               ))}
             </div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons - UPDATED WITH REAL LINKS */}
             <div className="flex gap-4 pt-4">
-              <button
+              {/* Live Demo Button */}
+              <a
+                href={currentProject.live}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`flex-1 group/btn flex items-center justify-center gap-3 px-8 py-5 bg-gradient-to-r ${currentProject.gradient} rounded-2xl font-bold text-white text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105`}
               >
-                <span>View Project</span>
-                <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-              </button>
-              <button className="p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:scale-110 hover:border-white/20">
+                <span>Live Demo</span>
+                <ExternalLink className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+              </a>
+
+              {/* GitHub Button */}
+              <a
+                href={currentProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:scale-110 hover:border-white/20"
+              >
                 <Github className="w-6 h-6 text-gray-300" />
-              </button>
-              <button className="p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:scale-110 hover:border-white/20">
-                <ExternalLink className="w-6 h-6 text-gray-300" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
