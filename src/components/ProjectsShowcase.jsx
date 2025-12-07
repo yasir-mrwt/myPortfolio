@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import unibroImg from "../assets/images/unibro.png";
+import jobTrackerImg from "../assets/images/job-tracker.jpg";
+import ecommerceImg from "../assets/images/e-commerce.png";
+import petcareImg from "../assets/images/petcare.png";
 import {
   Github,
   ExternalLink,
@@ -23,8 +27,7 @@ const ProjectsShowcase = () => {
         "A comprehensive MERN stack platform revolutionizing academic collaboration with real-time features, secure authentication, and intelligent resource management.",
       longDescription:
         "Built a production-ready platform serving students with JWT authentication, Google OAuth integration, automated email verification, role-based access control, and an admin approval system with automated notifications.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+      image: unibroImg,
       gradient: "from-cyan-500 to-blue-600",
       tech: [
         { name: "React + Vite", icon: <Zap className="w-4 h-4" /> },
@@ -58,8 +61,7 @@ const ProjectsShowcase = () => {
         "Intelligent job application tracking system powered by FastAPI, delivering real-time analytics and comprehensive application lifecycle management.",
       longDescription:
         "Designed and implemented a full-stack tracking system with Python FastAPI backend, JWT authentication, RESTful APIs, and a modern React interface featuring status management, notes, deadlines, and analytics.",
-      image:
-        "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
+      image: jobTrackerImg,
       gradient: "from-emerald-500 to-teal-600",
       tech: [
         { name: "FastAPI", icon: <Zap className="w-4 h-4" /> },
@@ -90,8 +92,7 @@ const ProjectsShowcase = () => {
         "Modern e-commerce solution with seamless user experience, robust cart management, and secure payment processing infrastructure.",
       longDescription:
         "Developed a complete e-commerce ecosystem using Node.js and Express, featuring comprehensive user authentication, dynamic product catalogs, intelligent cart management, and streamlined order processing.",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+      image: ecommerceImg,
       gradient: "from-orange-500 to-pink-600",
       tech: [
         { name: "Node.js", icon: <Zap className="w-4 h-4" /> },
@@ -119,8 +120,7 @@ const ProjectsShowcase = () => {
         "Comprehensive pet care management system with advanced role-based authorization and structured database architecture.",
       longDescription:
         "Created a full-stack platform using Node.js, Express, and MySQL with sophisticated user authentication, role-based authorization, admin dashboard, and structured database management for pet care services.",
-      image:
-        "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&q=80",
+      image: petcareImg,
       gradient: "from-violet-500 to-purple-600",
       tech: [
         { name: "Node.js", icon: <Zap className="w-4 h-4" /> },
