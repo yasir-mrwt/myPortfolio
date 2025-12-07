@@ -142,7 +142,7 @@ const ProjectsShowcase = () => {
         { label: "Architecture", value: "MVC Pattern" },
       ],
       github: "https://github.com/yasir-mrwt/petCare",
-      live: "https://github.com/yasir-mrwt/petCare",
+      live: "https://pet-care-five-ruby.vercel.app/",
     },
   ];
 
