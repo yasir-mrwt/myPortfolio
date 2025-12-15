@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import unibroImg from "../assets/images/unibro.png";
-import jobTrackerImg from "../assets/images/job-tracker.jpg";
+import pdfBuilderImg from "../assets/images/pdf-builder.png";
 import ecommerceImg from "../assets/images/e-commerce.png";
 import petcareImg from "../assets/images/petcare.png";
 import {
@@ -14,10 +14,14 @@ import {
   BarChart3,
   Mail,
   Shield,
+  Cloud,
+  FileText,
+  Cpu,
+  Database,
 } from "lucide-react";
 
 const ProjectsShowcase = () => {
-  const [activeProject, setActiveProject] = useState(0);
+  const [activeProject, setActiveProject] = useState(1); // Default to PDF Builder
 
   const projects = [
     {
@@ -32,8 +36,8 @@ const ProjectsShowcase = () => {
       tech: [
         { name: "React + Vite", icon: <Zap className="w-4 h-4" /> },
         { name: "Node.js", icon: <Zap className="w-4 h-4" /> },
-        { name: "MongoDB Atlas", icon: <Zap className="w-4 h-4" /> },
-        { name: "Supabase", icon: <Zap className="w-4 h-4" /> },
+        { name: "MongoDB Atlas", icon: <Database className="w-4 h-4" /> },
+        { name: "Supabase", icon: <Cloud className="w-4 h-4" /> },
       ],
       highlights: [
         {
@@ -55,35 +59,45 @@ const ProjectsShowcase = () => {
       live: "https://unibro-production.vercel.app",
     },
     {
-      title: "Job Tracker Pro",
-      tagline: "Application Management System",
+      title: "PDF Builder",
+      tagline: "AI-Powered PDF Generation SaaS",
       description:
-        "Intelligent job application tracking system powered by FastAPI, delivering real-time analytics and comprehensive application lifecycle management.",
+        "Full-stack SaaS platform that generates professional PDFs with AI enhancement, secure authentication, and multi-platform deployment.",
       longDescription:
-        "Designed and implemented a full-stack tracking system with Python FastAPI backend, JWT authentication, RESTful APIs, and a modern React interface featuring status management, notes, deadlines, and analytics.",
-      image: jobTrackerImg,
+        "Built and deployed a complete PDF generation system with real AI integration. Solved critical deployment challenges by migrating from Vercel serverless to Railway for Puppeteer support. Features include secure JWT authentication, Groq AI API integration, HTML-to-PDF conversion, and professional templating system.",
+      image: pdfBuilderImg,
       gradient: "from-emerald-500 to-teal-600",
       tech: [
-        { name: "FastAPI", icon: <Zap className="w-4 h-4" /> },
-        { name: "React", icon: <Zap className="w-4 h-4" /> },
-        { name: "MongoDB", icon: <Zap className="w-4 h-4" /> },
-        { name: "Tailwind CSS", icon: <Zap className="w-4 h-4" /> },
+        { name: "React + Vite", icon: <Zap className="w-4 h-4" /> },
+        { name: "Node.js/Express", icon: <FileText className="w-4 h-4" /> },
+        { name: "MongoDB", icon: <Database className="w-4 h-4" /> },
+        { name: "Puppeteer", icon: <Cpu className="w-4 h-4" /> },
       ],
       highlights: [
         {
-          icon: <BarChart3 className="w-5 h-5" />,
-          text: "Analytics Dashboard",
+          icon: <Cpu className="w-5 h-5" />,
+          text: "AI-Powered Content Generation",
         },
-        { icon: <Lock className="w-5 h-5" />, text: "JWT Authentication" },
-        { icon: <Zap className="w-5 h-5" />, text: "REST API Architecture" },
-        { icon: <Users className="w-5 h-5" />, text: "Resume Management" },
+        {
+          icon: <Cloud className="w-5 h-5" />,
+          text: "Multi-Platform Deployment (Vercel + Railway)",
+        },
+        {
+          icon: <Lock className="w-5 h-5" />,
+          text: "JWT Authentication & CORS Security",
+        },
+        {
+          icon: <FileText className="w-5 h-5" />,
+          text: "Professional PDF Templates",
+        },
       ],
       stats: [
-        { label: "Backend", value: "Python FastAPI" },
-        { label: "Database", value: "MongoDB" },
+        { label: "Frontend", value: "Vercel" },
+        { label: "Backend", value: "Railway" },
+        { label: "AI", value: "Groq API" },
       ],
-      github: "https://github.com/yasir-mrwt/job-tracker",
-      live: "https://github.com/yasir-mrwt/job-tracker",
+      github: "https://github.com/yasir-mrwt/pdf-builder",
+      live: "https://pdf-builder-six.vercel.app",
     },
     {
       title: "E-Commerce Hub",
@@ -96,8 +110,8 @@ const ProjectsShowcase = () => {
       gradient: "from-orange-500 to-pink-600",
       tech: [
         { name: "Node.js", icon: <Zap className="w-4 h-4" /> },
-        { name: "Express", icon: <Zap className="w-4 h-4" /> },
-        { name: "MongoDB", icon: <Zap className="w-4 h-4" /> },
+        { name: "Express", icon: <FileText className="w-4 h-4" /> },
+        { name: "MongoDB", icon: <Database className="w-4 h-4" /> },
         { name: "Bootstrap", icon: <Zap className="w-4 h-4" /> },
       ],
       highlights: [
@@ -124,8 +138,8 @@ const ProjectsShowcase = () => {
       gradient: "from-violet-500 to-purple-600",
       tech: [
         { name: "Node.js", icon: <Zap className="w-4 h-4" /> },
-        { name: "Express", icon: <Zap className="w-4 h-4" /> },
-        { name: "MySQL", icon: <Zap className="w-4 h-4" /> },
+        { name: "Express", icon: <FileText className="w-4 h-4" /> },
+        { name: "MySQL", icon: <Database className="w-4 h-4" /> },
         { name: "Bootstrap", icon: <Zap className="w-4 h-4" /> },
       ],
       highlights: [
@@ -191,7 +205,7 @@ const ProjectsShowcase = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
                     {currentProject.stats.map((stat, idx) => (
                       <div
                         key={idx}
