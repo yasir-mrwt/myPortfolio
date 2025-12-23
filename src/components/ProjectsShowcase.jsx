@@ -3,6 +3,7 @@ import unibroImg from "../assets/images/unibro.png";
 import pdfBuilderImg from "../assets/images/pdf-builder.png";
 import ecommerceImg from "../assets/images/e-commerce.png";
 import petcareImg from "../assets/images/petcare.png";
+import spliteaseImg from "../assets/images/splitEase.png";
 import {
   Github,
   ExternalLink,
@@ -18,12 +19,55 @@ import {
   FileText,
   Cpu,
   Database,
+  Share2,
+  Calculator,
 } from "lucide-react";
 
 const ProjectsShowcase = () => {
-  const [activeProject, setActiveProject] = useState(1); // Default to PDF Builder
+  const [activeProject, setActiveProject] = useState(0); // Default to SplitEase
 
   const projects = [
+    {
+      title: "SplitEase",
+      tagline: "Smart Expense Splitting Platform",
+      description:
+        "A modern full-stack expense splitting app with real-time balance calculations, smart settlement algorithms, and shareable group links. Built and deployed in 6 days with serverless architecture.",
+      longDescription:
+        "Developed a production-ready MERN stack application featuring intelligent expense splitting, automatic settlement calculations, and shareable group URLs. Overcame critical serverless deployment challenges including CORS configuration, MongoDB connection caching, React Router SPAs on Vercel, and request debouncing for optimal performance.",
+      image: spliteaseImg,
+      gradient: "from-coral-500 to-teal-600",
+      tech: [
+        { name: "React + Vite", icon: <Zap className="w-4 h-4" /> },
+        { name: "Node.js/Express", icon: <FileText className="w-4 h-4" /> },
+        { name: "MongoDB Atlas", icon: <Database className="w-4 h-4" /> },
+        { name: "Vercel Serverless", icon: <Cloud className="w-4 h-4" /> },
+      ],
+      highlights: [
+        {
+          icon: <Calculator className="w-5 h-5" />,
+          text: "Smart Settlement Algorithm",
+        },
+        {
+          icon: <Share2 className="w-5 h-5" />,
+          text: "Shareable Group Links (No Signup)",
+        },
+        {
+          icon: <Cloud className="w-5 h-5" />,
+          text: "Serverless Architecture with Connection Caching",
+        },
+        {
+          icon: <Users className="w-5 h-5" />,
+          text: "Dynamic Member Management",
+        },
+      ],
+      stats: [
+        { label: "API Endpoints", value: "19 RESTful" },
+        { label: "Deployment", value: "Vercel (Full Stack)" },
+        { label: "Timeline", value: "6 Days" },
+      ],
+      github: "https://github.com/yasir-mrwt/splitEase-frontend",
+      live: "https://split-ease-frontend.vercel.app/",
+    },
     {
       title: "UniBro",
       tagline: "Academic Resource Platform",
@@ -312,8 +356,8 @@ const ProjectsShowcase = () => {
           </div>
         </div>
 
-        {/* Project Navigation */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Project Navigation - NOW 5 PROJECTS */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {projects.map((project, idx) => (
             <button
               key={idx}
